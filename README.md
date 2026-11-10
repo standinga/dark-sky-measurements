@@ -55,9 +55,19 @@ Each frame is plate-solved, which gives its pointing and a per-frame zero point 
 
     mu = 21.62 + 2.5 log10(296.7 / ADU)
 
-ADU is the raw green sky background in a 15° cone (half-angle), corrected for cos⁴ vignetting and taken at the 25th percentile of blocks to reject stars. Frames at f/2.2 are multiplied by 1.494 to match f/1.8. The constants come from one reference frame, so this is a relative scale for this camera, not a true SQM value. The per-frame zero point is used only as a check on transparency.
+ADU is the raw green sky background in a 15° cone (half-angle), corrected for cos⁴ vignetting and taken at the 25th percentile of blocks to reject stars. Frames at f/2.2 are multiplied by 1.494 to match f/1.8. The constants come from the star-calibrated zero point of one reference frame, so the scale is close to the V band but specific to this camera, and it is not an SQM value. The per-frame zero point is used only as a check on transparency.
 
 **Using another camera:** the 21.62 and 296.7 will not transfer. Derive your own from one well-solved, clear, dark frame at your fixed settings.
+
+### Why the camera and meter numbers differ
+
+At the same stop, the camera reads 0.5 to 0.7 mag darker than the Unihedron SQM-L. The two are deliberately not calibrated onto one scale:
+
+- **They measure different things.** The camera value uses only the green channel in a patch about 30° across, and its scale comes from catalogue star magnitudes, close to the standard V band. The SQM-L responds to a broad band that includes red light, in a patch about 20° across.
+- **The gap is not constant.** It was 0.62 to 0.71 mag in France and about 0.5 to 0.6 mag in Roztocze, larger where the sky was redder. A single correction would leave errors of up to about 0.15 mag, as large as the differences between sites.
+- **Red airglow may explain it.** Oxygen airglow at 630 nm is visible to the SQM-L but barely to the green channel. This is untested.
+
+Compare camera values with camera values, and meter values with meter values.
 
 ### Columns in `z5_frames.csv`
 
