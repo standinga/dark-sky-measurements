@@ -20,7 +20,7 @@ This is a hobby project. If you measure with a Unihedron SQM anywhere in Europe,
 | `data/z5_frames.csv` | One row per measured Z5 frame, with the paired meter reading |
 | `data/stars.csv` | Star positions and magnitudes used for plate solving |
 
-**Raw files:** the NEFs are attached to the GitHub Release as one zip per session, each with an `.xmp` sidecar per frame holding its GPS position. The NEFs themselves are unmodified.
+**Raw files:** the NEFs are attached to [release v1](https://github.com/standinga/dark-sky-measurements/releases/tag/v1) as one zip per session, each with an `.xmp` sidecar per frame holding its GPS position. The NEFs themselves are unmodified.
 
 | Zip | Frames |
 |---|---|
