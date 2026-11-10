@@ -1,0 +1,5 @@
+release/
+photos/
+post/
+.DS_Store
+__pycache__/
